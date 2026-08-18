@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 const COLORS = {
   green950: "#132B1B",
@@ -71,43 +73,42 @@ function Header() {
       }}
     >
       <div className="max-w-[1180px] mx-auto px-7 md:px-10 flex items-center justify-between py-4">
-        <a
-          href="#"
+        <Link
           className="flex items-center gap-2.5 font-extrabold text-lg"
           style={{ color: COLORS.ink }}
         >
           <BrandMark />
           Logify
-        </a>
+        </Link>
 
         <nav className="hidden lg:flex items-center gap-8">
           {NAV_LINKS.map((l) => (
-            <a
+            <Link
               key={l.href}
-              href={l.href}
+              to={l.href}
               className="text-sm font-medium opacity-75 hover:opacity-100 transition"
               style={{ color: COLORS.ink }}
             >
               {l.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
         <div className="hidden lg:flex items-center gap-3">
-          <a
-            href="/login"
+          <Link
+            to="/login"
             className="px-5 py-3 rounded-[10px] text-sm font-semibold border hover:border-[#2F6B3E] transition"
             style={{ borderColor: COLORS.border, color: COLORS.ink }}
           >
             Supervisor Portal
-          </a>
-          <a
-            href="/login"
+          </Link>
+          <Link
+            to="/login"
             className="px-5 py-3 rounded-[10px] text-sm font-semibold text-white shadow-md hover:opacity-90 transition"
             style={{ background: COLORS.green700 }}
           >
             Get Started
-          </a>
+          </Link>
         </div>
 
         <button
@@ -137,30 +138,30 @@ function Header() {
           style={{ borderColor: COLORS.border }}
         >
           {NAV_LINKS.map((l) => (
-            <a
+            <Link
               key={l.href}
-              href={l.href}
+              to={l.href}
               onClick={() => setOpen(false)}
               className="py-3 text-[15px] font-medium"
               style={{ color: COLORS.ink }}
             >
               {l.label}
-            </a>
+            </Link>
           ))}
-          <a
-            href="#"
+          <Link
+            to="/login"
             className="mt-2 text-center px-5 py-3 rounded-[10px] text-sm font-semibold text-white"
             style={{ background: COLORS.green700 }}
           >
             Get Started as a Student
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            to="/login"
             className="mt-2 text-center px-5 py-3 rounded-[10px] text-sm font-semibold border"
             style={{ borderColor: COLORS.border, color: COLORS.ink }}
           >
             Supervisor Portal
-          </a>
+          </Link>
         </div>
       )}
     </header>
@@ -1003,15 +1004,15 @@ function CTA() {
               already gone digital. Sign up free and start logging today.
             </p>
             <div className="flex flex-col gap-3 max-w-[320px] mx-auto">
-              <a
-                href="/login"
+              <Link
+                to="/login"
                 className="px-6 py-3.5 rounded-[10px] font-semibold text-sm hover:bg-[#EDEBE0] transition"
                 style={{ background: "white", color: COLORS.green900 }}
               >
                 Sign Up Free
-              </a>
-              <a
-                href="#features"
+              </Link>
+              <Link
+                to="#features"
                 className="px-6 py-3.5 rounded-[10px] font-semibold text-sm border hover:bg-white/5 hover:border-white transition"
                 style={{
                   borderColor: "rgba(255,255,255,0.32)",
@@ -1019,7 +1020,7 @@ function CTA() {
                 }}
               >
                 Learn More
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -1058,14 +1059,14 @@ function Footer() {
       <div className="max-w-[1180px] mx-auto px-7 md:px-10">
         <div className="grid grid-cols-1 md:grid-cols-[1.4fr_1fr_1fr_1fr] gap-10 mb-12">
           <div>
-            <a
-              href="#"
+            <Link
+              to="#"
               className="flex items-center gap-2.5 font-extrabold text-lg"
               style={{ color: COLORS.ink }}
             >
               <BrandMark />
               Logify
-            </a>
+            </Link>
             <p
               className="mt-3.5 text-[14.5px] leading-relaxed max-w-[280px]"
               style={{ color: COLORS.gray }}
@@ -1083,14 +1084,14 @@ function Footer() {
                 {col.title}
               </h5>
               {col.links.map((l) => (
-                <a
+                <Link
                   key={l}
-                  href="#"
+                  to="#"
                   className="block text-[14.5px] py-1.5 hover:text-[#2F6B3E] transition"
                   style={{ color: COLORS.gray }}
                 >
                   {l}
-                </a>
+                </Link>
               ))}
             </div>
           ))}
@@ -1104,9 +1105,9 @@ function Footer() {
           </span>
           <div className="flex gap-2.5">
             {["Twitter", "LinkedIn", "Instagram"].map((s) => (
-              <a
+              <Link
                 key={s}
-                href="#"
+                to="#"
                 aria-label={s}
                 className="w-9 h-9 rounded-full bg-white border flex items-center justify-center"
                 style={{ borderColor: COLORS.border, color: COLORS.gray }}
@@ -1120,7 +1121,7 @@ function Footer() {
                     strokeWidth="1.5"
                   />
                 </svg>
-              </a>
+              </Link>
             ))}
           </div>
         </div>

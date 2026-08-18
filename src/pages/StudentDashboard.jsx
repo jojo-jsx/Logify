@@ -49,7 +49,7 @@ export default function StudentDashboard() {
     <div className="min-h-screen bg-ink-50">
       <Navbar />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8 space-y-6">
-        {/* Header / status row */}
+
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <h1 className="font-display text-2xl font-semibold text-ink-900">{currentMonth.label}</h1>
@@ -60,7 +60,6 @@ export default function StudentDashboard() {
           <Badge tone="forest">{weeksDone}/{currentMonth.weeks.length} weeks done</Badge>
         </div>
 
-        {/* Overview card */}
         <Card className="p-5">
           <div className="flex items-center justify-between mb-2">
             <p className="text-sm font-medium text-ink-700">Overall progress</p>
@@ -69,7 +68,6 @@ export default function StudentDashboard() {
           <ProgressBar done={filledDays} total={totalDays} />
         </Card>
 
-        {/* Weeks */}
         <div className="space-y-5">
           {currentMonth.weeks.map((week) => (
             <WeekCard
@@ -83,7 +81,6 @@ export default function StudentDashboard() {
           ))}
         </div>
 
-        {/* Submission */}
         {!currentMonth.locked && (
           <Card className="p-5">
             <p className="text-sm font-semibold text-ink-800 mb-1">Submit monthly report</p>
@@ -111,7 +108,6 @@ export default function StudentDashboard() {
           </Card>
         )}
 
-        {/* Placement info */}
         <Card className="p-5">
           <div className="flex items-center gap-2 mb-3">
             <Building2 size={16} className="text-trust-600" />
@@ -123,7 +119,6 @@ export default function StudentDashboard() {
           </dl>
         </Card>
 
-        {/* History */}
         {history.length > 0 && (
           <Card className="p-5">
             <p className="text-sm font-semibold text-ink-800 mb-3">Submitted months</p>
