@@ -1103,27 +1103,6 @@ function Footer() {
           <span className="text-[13.5px]" style={{ color: "#8C8C7F" }}>
             © 2026 Logify. All rights reserved.
           </span>
-          <div className="flex gap-2.5">
-            {["Twitter", "LinkedIn", "Instagram"].map((s) => (
-              <Link
-                key={s}
-                to="#"
-                aria-label={s}
-                className="w-9 h-9 rounded-full bg-white border flex items-center justify-center"
-                style={{ borderColor: COLORS.border, color: COLORS.gray }}
-              >
-                <svg viewBox="0 0 24 24" width="15" height="15" fill="none">
-                  <circle
-                    cx="12"
-                    cy="12"
-                    r="9"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                  />
-                </svg>
-              </Link>
-            ))}
-          </div>
         </div>
       </div>
     </footer>
