@@ -1,16 +1,57 @@
-# React + Vite
+# Logify
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A digital replacement for the paper SIWES logbook. Students record their daily work, and supervisors review it, all in one place.
 
-Currently, two official plugins are available:
+**Live demo:** logify-rouge.vercel.app · **Team project**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## React Compiler
+## The problem
+using a paper logbook can be stressful , easily misplaced , or inadequately filled.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## What it does
 
-## Expanding the Oxlint configuration
+Two roles, each with their own view:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+- **Student**: logs in, fills in a daily log, and submits the whole week for review.
+- **Supervisor**: sees a dashboard of submitted weeks and reviews them.
+
+This is a scoped MVP covering the login, student and supervisor pages.
+
+## My contribution
+
+I owned the frontend design and build:
+
+- UI/UX design of the app
+- The daily log forms
+- The Submit Week flow
+- The supervisor dashboard
+
+## Tech stack
+
+- React + Vite
+- Tailwind CSS
+- State kept in the browser with `localStorage`
+
+## How it works
+
+This is a front-end prototype, built to demonstrate the whole flow in a live presentation. There is **no backend**: data is stored in the browser's `localStorage`, so each feature works end to end but on a single device.
+
+## Known limitations
+
+- No real authentication or server. Data lives only in the browser it was entered on.
+- Built as a prototype, so some features are intentionally shallow.
+
+## What I learned
+
+- Designing a form-heavy flow (daily entries, then a weekly submission) so it's quick for a student to use.
+- Building two role-based views from one codebase.
+- Persisting app state with `localStorage` in a React app.
+
+## Run it locally
+
+```bash
+git clone [repo link]
+cd [folder]
+npm install
+npm run dev
+```
